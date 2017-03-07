@@ -47,11 +47,6 @@
 		$viewer.id = "viewer";
 		$viewer.className = "hide";
 
-		/*$resume = document.getElementById("resume");
-		if($resume!=null)
-		    $resume.style.display = "none";*/
-		//$recent-comments = document.getElementById("ds-recent-comments");
-		//$recent-comments.style.display = "none";
 		$tag = document.getElementById("js-tagcloud");
 		$aboutme = document.getElementById("js-aboutme");
 		$friends = document.getElementById("js-friends");
