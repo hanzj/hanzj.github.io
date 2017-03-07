@@ -569,6 +569,15 @@ a {
   #container #footer {
     margin: 10px;
   }
+  #container .page-reward {
+    display: none;
+  }
+  #container .socialShare {
+    display: none !important;
+  }
+  #container #totop {
+    display: none !important;
+  }
 }
 .header-author {
   text-align: center;
