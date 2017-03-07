@@ -89,7 +89,6 @@
 
 	Mobile.prototype.hide = function(){
 		var self = this;
-		$(".page-reward").remove();
 		document.getElementById("viewer-box").className = "";
 		_isShow = false;
 		document.ontouchstart=function(){
@@ -101,7 +100,7 @@
 	Mobile.prototype.bindDOM = function(){
 		var self = this;
 		var scaleW = self.scaleW;
-
+		
 		//滑动隐藏
 		document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
 
@@ -154,6 +153,6 @@
 			$('html, body').animate({scrollTop:0}, 'slow');
 		}, false);
 	};
-
+	
 	return Mobile;
 }))

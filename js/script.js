@@ -128,10 +128,10 @@
     $container.toggleClass('mobile-nav-on');
     stopMobileNavAnim();
   });
-
+console.log(isMobileNavAnim+"------------");
   $('#wrap').on('click', function(){
     if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
 
-    $container.removeClass('mobile-nav-on');
+    
   });
 })(jQuery);
