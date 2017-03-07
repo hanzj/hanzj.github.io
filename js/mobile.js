@@ -41,6 +41,7 @@
 	}
 	//第三步 -- 根据数据渲染DOM
 	Mobile.prototype.renderDOM = function(){
+
 		//生成节点
 		var $viewer = document.createElement("div");
 		$viewer.id = "viewer";
@@ -88,6 +89,7 @@
 
 	Mobile.prototype.hide = function(){
 		var self = this;
+		$(".page-reward").remove();
 		document.getElementById("viewer-box").className = "";
 		_isShow = false;
 		document.ontouchstart=function(){
