@@ -105,6 +105,7 @@
 			self.show();
 		}, false);
 
+
 		var $right = document.getElementsByClassName("viewer-box-r")[0];
 		var touchStartTime;
 		var touchEndTime;
@@ -139,6 +140,16 @@
 		$header[0].addEventListener("touchstart", function(){
 			$('html, body').animate({scrollTop:0}, 'slow');
 		}, false);
+
+
+				self.ctn.addEventListener("click", function(e){
+			console.log(1);
+			self.show();
+			e.preventDefault();
+		}, false);
+		$right .addEventListener('click',function(){
+			self.hide();
+		},false)
 	};
 	
 	return Mobile;
