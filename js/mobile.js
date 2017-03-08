@@ -6,7 +6,7 @@
     }
 }(this, function() {
 	var _isShow = false;
-	var $tag, $aboutme, $friends;
+	var $tag;
 	//构造函数
 	function Mobile(opts){
 		//构造函数需要的参数
@@ -29,15 +29,14 @@
 	};
 	//第一步 -- 组合
 	Mobile.prototype.combine = function(){
-		if($tag){
-			document.getElementById("js-mobile-tagcloud").innerHTML = $tag.innerHTML;
+		$tag = document.getElementsByClassName("header-menu")[0];
+		var lis = $tag.getElementsByTagName('ul')[0].getElementsByTagName('li');
+		var html = "";
+		for (var i = lis.length - 1; i >= 0; i--) {
+			html = '<div class="viewer-title" >'+lis[i].innerHTML+'</div>' + html;
 		}
-		if($aboutme){
-			document.getElementById("js-mobile-aboutme").innerHTML = $aboutme.innerHTML;
-		}
-		if($friends){
-			document.getElementById("js-mobile-friends").innerHTML = $friends.innerHTML;
-		}
+		document.getElementsByClassName('viewer-box-wrap')[0].innerHTML = html;
+		//document.getElementById("js-mobile-tagcloud").innerHTML = '<nav class="header-menu">123</nav>';
 	}
 	//第三步 -- 根据数据渲染DOM
 	Mobile.prototype.renderDOM = function(){
@@ -47,19 +46,12 @@
 		$viewer.id = "viewer";
 		$viewer.className = "hide";
 
-		$tag = document.getElementById("js-tagcloud");
-		$aboutme = document.getElementById("js-aboutme");
-		$friends = document.getElementById("js-friends");
-		var tagStr = $tag?'<span class="viewer-title">标签</span><div class="viewer-div tagcloud" id="js-mobile-tagcloud"></div>':"";
-		var friendsStr = $friends?'<span class="viewer-title">友情链接</span><div class="viewer-div friends" id="js-mobile-friends"></div>':"";
-		var aboutmeStr = $aboutme?'<span class="viewer-title">关于我</span><div class="viewer-div aboutme" id="js-mobile-aboutme"></div>':"";
+		
 
-		$viewer.innerHTML = '<div id="viewer-box">\
-		<div class="viewer-box-l">\
-			<div class="viewer-box-wrap">'+aboutmeStr+friendsStr+tagStr+'</div>\
-		</div>\
-		<div class="viewer-box-r"></div>\
-		</div>';
+		$viewer.innerHTML = '<div id="viewer-box"><div class="viewer-box-l">\
+			<div class="viewer-box-wrap">\
+			</div></div>\
+			<div class="viewer-box-r"></div></div>';
 
 		//主要图片节点
 		document.getElementsByTagName("body")[0].appendChild($viewer);
