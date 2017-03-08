@@ -2764,7 +2764,7 @@ pre .javascript .function {
   line-height: 32px;
 }
 #viewer-box .viewer-box-l .viewer-title:before {
-  content: "";
+/*content: "";*/
   width: 6px;
   height: 6px;
   border: 1px solid #999;
