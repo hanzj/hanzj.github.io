@@ -833,9 +833,8 @@ a {
 }
 .archives-wrap {
   position: relative;
-  margin-left: 40px;
-  margin-right: 40px;
-  padding-right: 60px;
+  margin: 4px 10px 0;
+  padding-right: 0px;
   border-bottom: 1px solid #eee;
   background: #fff;
 }
@@ -1794,9 +1793,8 @@ a {
 }
 .archives-wrap {
   position: relative;
-  margin-left: 40px;
-  margin-right: 40px;
-  padding-right: 60px;
+  margin: 4px 10px 0;
+  padding-right: 0px;
   border-bottom: 1px solid #eee;
   background: #fff;
 }
