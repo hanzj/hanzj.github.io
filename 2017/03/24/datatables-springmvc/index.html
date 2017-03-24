@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
+  
+  <title>dataTables SpringMVC 中的数据绑定 | hanzj&#39; Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在使用datatables通过ajax获取服务端数据时，因为datatables参数复杂，导致Spring MVC无法自动绑定对象。
+前端报DataTables warning: table id=example1 - Ajax error. For more information about this error, please see http://datatables.net/tn/7
+后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dataTables SpringMVC 中的数据绑定">
+<meta property="og:url" content="http://yoursite.com/2017/03/24/datatables-springmvc/index.html">
+<meta property="og:site_name" content="hanzj' Blog">
+<meta property="og:description" content="在使用datatables通过ajax获取服务端数据时，因为datatables参数复杂，导致Spring MVC无法自动绑定对象。
+前端报DataTables warning: table id=example1 - Ajax error. For more information about this error, please see http://datatables.net/tn/7
+后">
+<meta property="og:updated_time" content="2017-03-24T07:11:27.254Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dataTables SpringMVC 中的数据绑定">
+<meta name="twitter:description" content="在使用datatables通过ajax获取服务端数据时，因为datatables参数复杂，导致Spring MVC无法自动绑定对象。
+前端报DataTables warning: table id=example1 - Ajax error. For more information about this error, please see http://datatables.net/tn/7
+后">
+  
+    <link rel="alternative" href="/atom.xml" title="hanzj&#39; Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/assets/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/jquery1.8.2.min.js"></script>
+  <script src="/js/jquery.nicescroll.js"></script>
+  <script src="/js/jquery.qrcode.min.js"></script>
+  <script src="/js/ug-theme-default.js"></script>
+  <script src="/js/unitegallery.js"></script>
+</head>
+
+<body>
+
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/assets/hanzj.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/" class="alluraregular">hanzj</a></h1>
+		</hgroup>
+        
+		
+		<p class="header-subtitle">不积跬步，无以至千里</p>
+		
+        
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+
+				
+
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">乐于分享,喜欢环境音乐,爱看动漫,偶尔写写技术博客的小程一枚...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">hanzj</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/assets/hanzj.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+				  <h1 class="header-author alluraregular">hanzj</h1>
+			</hgroup>
+			
+				<p class="header-subtitle">不积跬步，无以至千里</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<!--<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>-->
+		</header>
+	</div>
+</nav>
+
+	  <!--是否开启最近通知-->
+	  
+      <div class="body-wrap"><article id="post-datatables-springmvc" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2017/03/24/datatables-springmvc/" class="article-date">
+  	<time datetime="2017-03-24T06:00:34.672Z" itemprop="datePublished">2017-03-24</time>
+</a>
+
+        </div>
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
+  
+    <h1 class="article-title" itemprop="name">
+      dataTables SpringMVC 中的数据绑定
+    </h1>
+  
+
+
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                                    <p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
+    
+</div>
+<script>
+    $(function(){
+
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>
+
+                                                  
+                                            
+                                            -->
+                                            
+                                                     <p>在使用datatables通过ajax获取服务端数据时，因为datatables参数复杂，导致Spring MVC无法自动绑定对象。</p>
+<p>前端报DataTables warning: table id=example1 - Ajax error. For more information about this error, please see <a href="http://datatables.net/tn/7" target="_blank" rel="external">http://datatables.net/tn/7</a></p>
+<p>后台报警告: Handler execution resulted in exception: org.springframework.beans.InvalidPropertyException: Invalid property ‘columns[0][data]’ of bean class [<em>.</em>.<em>.DataTable]: Property referenced in indexed property path ‘columns[0][data]’ is neither an array nor a List nor a Map; returned value was [</em>.<em>.</em>.Columns@5ba60222]<br><a id="more"></a><br>datatables提交的原始json格式如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"draw"</span>:<span class="number">1</span>,</div><div class="line">    <span class="attr">"columns"</span>:[</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"data"</span>:<span class="number">0</span>,</div><div class="line">            <span class="attr">"name"</span>:<span class="string">""</span>,</div><div class="line">            <span class="attr">"searchable"</span>:<span class="literal">true</span>,</div><div class="line">            <span class="attr">"orderable"</span>:<span class="literal">false</span>,</div><div class="line">            <span class="attr">"search"</span>:&#123;</div><div class="line">                <span class="attr">"value"</span>:<span class="string">""</span>,</div><div class="line">                <span class="attr">"regex"</span>:<span class="literal">false</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"data"</span>:<span class="number">1</span>,</div><div class="line">            <span class="attr">"name"</span>:<span class="string">""</span>,</div><div class="line">            <span class="attr">"searchable"</span>:<span class="literal">true</span>,</div><div class="line">            <span class="attr">"orderable"</span>:<span class="literal">false</span>,</div><div class="line">            <span class="attr">"search"</span>:&#123;</div><div class="line">                <span class="attr">"value"</span>:<span class="string">""</span>,</div><div class="line">                <span class="attr">"regex"</span>:<span class="literal">false</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"order"</span>:[],</div><div class="line">    <span class="attr">"start"</span>:<span class="number">0</span>,</div><div class="line">    <span class="attr">"length"</span>:<span class="number">-1</span>,</div><div class="line">    <span class="attr">"search"</span>:&#123;</div><div class="line">        <span class="attr">"value"</span>:<span class="string">""</span>,</div><div class="line">        <span class="attr">"regex"</span>:<span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>jQuery Ajax会将上述json序列化成如下的字符串<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">draw=1&amp;</div><div class="line">columns[0][data]=0&amp;</div><div class="line">columns[0][name]=&amp;</div><div class="line">columns[0][searchable]=true&amp;</div><div class="line">columns[0][orderable]=false&amp;</div><div class="line">columns[0][search][value]=&amp;</div><div class="line">columns[0][search][regex]=false&amp;</div><div class="line">columns[1][data]=1,</div><div class="line">columns[1][name]=&amp;</div><div class="line">columns[1][searchable]=true&amp;</div><div class="line">columns[1][orderable]=false&amp;</div><div class="line">columns[1][search][value]=&amp;</div><div class="line">columns[1][search][regex]=false&amp;</div><div class="line">order=0&amp;</div><div class="line">start=0&amp;</div><div class="line">length=-1&amp;</div><div class="line">search[value]=&amp;</div><div class="line">search[regex]=false</div></pre></td></tr></table></figure></p>
+<p>对于一个对象object内部的字段field而言，转成object.field才是容易理解的，而object[field]，更让人理解为object是一个map集合对象。因此spring会将object[0][field]认为是List<map>,object[0].field才会被认为是一个对象的字段。<br>所以，解决方法就是重写jQuery的序列化方法，也就是buildParams方法，让column[0][data]变为column[0].data<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildParams</span>(<span class="params"> prefix, obj, traditional, add </span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> name;</div><div class="line">	<span class="keyword">if</span> ( jQuery.isArray( obj ) ) &#123;</div><div class="line">		<span class="comment">// Serialize array item.</span></div><div class="line">		jQuery.each( obj, <span class="function"><span class="keyword">function</span>(<span class="params"> i, v </span>) </span>&#123;</div><div class="line">			<span class="keyword">if</span> ( traditional || rbracket.test( prefix ) ) &#123;</div><div class="line"></div><div class="line">				<span class="comment">// Treat each array item as a scalar.</span></div><div class="line">				add( prefix, v );</div><div class="line"></div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">				<span class="comment">// Item is non-scalar (array or object), encode its numeric index.</span></div><div class="line">				buildParams(</div><div class="line">					prefix + <span class="string">"["</span> + ( <span class="keyword">typeof</span> v === <span class="string">"object"</span> &amp;&amp; v != <span class="literal">null</span> ? i : <span class="string">""</span> ) + <span class="string">"]"</span>,</div><div class="line">					v,</div><div class="line">					traditional,</div><div class="line">					add</div><div class="line">				);</div><div class="line">			&#125;</div><div class="line">		&#125; );</div><div class="line"></div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( !traditional &amp;&amp; jQuery.type( obj ) === <span class="string">"object"</span> ) &#123;</div><div class="line"></div><div class="line">		<span class="comment">// Serialize object item.</span></div><div class="line">		<span class="keyword">for</span> ( name <span class="keyword">in</span> obj ) &#123;</div><div class="line">			<span class="comment">//buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );</span></div><div class="line">			buildParams( prefix + <span class="string">"."</span> + name , obj[ name ], traditional, add );</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">		<span class="comment">// Serialize scalar item.</span></div><div class="line">		add( prefix, obj );</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></map></p>
+<p>参考：<a href="http://stackoverflow.com/questions/5900840/post-nested-object-to-spring-mvc-controller-using-json" target="_blank" rel="external">http://stackoverflow.com/questions/5900840/post-nested-object-to-spring-mvc-controller-using-json</a></p>
+
+                                            
+
+                                  
+                                    <div class="page-reward">
+                                      <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                        <div class="tooltip tooltip-east">
+                                        <span class="tooltip-item">赏</span>
+                                        <span class="tooltip-content">
+                                          <span class="tooltip-text">
+                                            <span class="tooltip-inner">
+                                              <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                                              <div class="reward-box">
+                                                
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/assets/weixin.jpg">
+                                                  <span class="reward-type">微信</span>
+                                                </div>
+                                                
+                                                
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/assets/alipay.jpg">
+                                                  <span class="reward-type">支付宝</span>
+                                                </div>
+                                                
+                                              </div>
+                                            </span>
+                                          </span>
+                                        </span>
+                                      </div>
+                                      </a>
+                                    </div>
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datatables/">datatables</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springmvc/">springmvc</a></li></ul>
+	</div>
+
+
+                            
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">work</a>
+	</div>
+
+
+                            
+                            
+                                <div id="socialShare" style="margin-right:40px;display:none;"></div>
+                                <script>
+                                    $(function() {
+                                        var width = document.body.scrollWidth;
+                                        if (width > 550) {
+                                            $("#socialShare").css("display", "block");
+                                            $("#socialShare").socialShare({
+                                                content: 'Nice!不错的资源...',
+                                                url: window.location.href,
+                                                titile: ''
+                                            });
+                                        }
+                                    });
+                                </script>
+                                
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                        
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+                            
+                                <!-- 多说评论框 start -->
+                                
+</article>
+
+<!--
+
+    <div style="width:100%;background-color:#fff;">
+        <div id="uyan_frame" style="margin:auto 10px 10px 10px;"></div>
+    </div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2017540"></script>
+    
+-->
+<!--
+
+-->
+
+</div>
+      <!--
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 hanzj
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','m5RW4BUQrJ_r-CYKAksH','2.0.0');
+</script>
+  </div>
+</footer>
+-->
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/prefixfree.js"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:0px;right:10px;cursor: pointer;z-index:9999;opacity: 100%;">
+    <a title="返回顶部" style="opacity: 100%;">
+        <img src="/img/scrollup.png" />
+    </a>
+</div>
+
+<script src="/js/totop.js"></script>
+<script src="/js/share.js"></script>
+
+  </div>
+</body>
+</html>

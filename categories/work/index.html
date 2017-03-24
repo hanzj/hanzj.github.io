@@ -55,7 +55,7 @@
 						
 							<li><a href="/">主页</a></li>
 				        
-							<li><a href="/categories/work">工作日志</a></li>
+							<li><a href="/archives">归档</a></li>
 				        
 							<li><a href="/about">关于我</a></li>
 				        
@@ -107,7 +107,7 @@
 				
 					<li><a href="/">主页</a></li>
 		        
-					<li><a href="/categories/work">工作日志</a></li>
+					<li><a href="/archives">归档</a></li>
 		        
 					<li><a href="/about">关于我</a></li>
 		        
@@ -125,15 +125,100 @@
 
 	  <!--是否开启最近通知-->
 	  
-	  <div class="recent">
-    最近研究shiro中......
-</div>
-
-	  
       <div class="body-wrap"><!-- 是否开启微简历 -->
 
 
 
+
+  
+    <article id="post-datatables-springmvc" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2017/03/24/datatables-springmvc/" class="article-date">
+  	<time datetime="2017-03-24T06:00:34.672Z" itemprop="datePublished">2017-03-24</time>
+</a>
+
+        </div>
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/24/datatables-springmvc/">dataTables SpringMVC 中的数据绑定</a>
+    </h1>
+  
+
+
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                            
+                                            -->
+                                            
+                                                     <p>在使用datatables通过ajax获取服务端数据时，因为datatables参数复杂，导致Spring MVC无法自动绑定对象。</p>
+<p>前端报DataTables warning: table id=example1 - Ajax error. For more information about this error, please see <a href="http://datatables.net/tn/7">http://datatables.net/tn/7</a></p>
+<p>后台报警告: Handler execution resulted in exception: org.springframework.beans.InvalidPropertyException: Invalid property ‘columns[0][data]’ of bean class [<em>.</em>.<em>.DataTable]: Property referenced in indexed property path ‘columns[0][data]’ is neither an array nor a List nor a Map; returned value was [</em>.<em>.</em>.Columns@5ba60222]<br>
+                                            
+
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datatables/">datatables</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springmvc/">springmvc</a></li></ul>
+	</div>
+
+
+                            
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">work</a>
+	</div>
+
+
+                            
+                                <p class="article-more-link">
+                                    <a  href="/2017/03/24/datatables-springmvc/#more">展开全文 >></a>
+                                </p>
+                            
+                            
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                                <!-- 多说评论框 start -->
+                                
+</article>
+
+<!--
+
+-->
+<!--
+
+-->
 
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
@@ -296,7 +381,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
-<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;z-index:9999;opacity: 100%;">
+<div id="totop" style="position:fixed;bottom:0px;right:10px;cursor: pointer;z-index:9999;opacity: 100%;">
     <a title="返回顶部" style="opacity: 100%;">
         <img src="/img/scrollup.png" />
     </a>
