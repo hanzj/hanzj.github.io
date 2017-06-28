@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
   
-  <title>Archives | hanzj&#39; Blog</title>
+  <title>Tag: oracle | hanzj&#39; Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="hanzj' Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/oracle/index.html">
 <meta property="og:site_name" content="hanzj' Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hanzj' Blog">
@@ -125,177 +125,147 @@
 
 	  <!--是否开启最近通知-->
 	  
-      <div class="body-wrap">
+      <div class="body-wrap"><!-- 是否开启微简历 -->
+
+
+
+
   
-  
+    <article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/28/oracle-dict/" class="archive-article-date">
-  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">Jun 28</time>
+        <div class="article-meta">
+            <a href="/2017/06/28/oracle-dict/" class="article-date">
+  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">2017-06-28</time>
 </a>
 
         </div>
-    	 
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/oracle-dict/">oracle数据字典</a>
+      <a class="article-title" href="/2017/06/28/oracle-dict/">oracle数据字典</a>
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                                    <p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
+    
+</div>
+<script>
+    $(function(){
+
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>
+
+                                                  
+                                            
+                                            -->
+                                            
+                                                     <ol>
+<li>查询用户下所有表<br>SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; </li>
+<li>查询表中所有字段<br>SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; </li>
+<li>查询表的索引列<br>SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE UPPER(T.TABLE_NAME) = ‘ZZ_TEST’ </li>
+<li>列出表中的约束<br>SELECT * FROM All_Constraints t WHERE t.table_name = ‘ZZ_TEST’  </li>
+<li>在oracle中描述数据字典视图<br>SELECT table_name , comments FROM DICTIONARY WHERE table_name LIKE ‘%TABLE%’ </li>
+</ol>
+
+                                            
+
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
 	</div>
 
 
-          
+                            
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/work/">work</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+                            
+                            
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                                <!-- 多说评论框 start -->
+                                
 </article>
 
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/05/Unhandled event loop exception/" class="archive-article-date">
-  	<time datetime="2017-04-05T15:01:12.613Z" itemprop="datePublished">Apr 5</time>
-</a>
+<!--
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/05/Unhandled event loop exception/">Eclipse4.3.2 Unhandled event loop exception</a>
-    </h1>
-  
+-->
+<!--
 
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
-	</div>
-
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">work</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/24/datatables-springmvc/" class="archive-article-date">
-  	<time datetime="2017-03-24T06:00:34.672Z" itemprop="datePublished">Mar 24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/24/datatables-springmvc/">dataTables SpringMVC 中的数据绑定</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datatables/">datatables</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springmvc/">springmvc</a></li></ul>
-	</div>
-
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">work</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/05/hello-world/" class="archive-article-date">
-  	<time datetime="2017-03-05T10:52:42.274Z" itemprop="datePublished">Mar 5</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">work</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+-->
 
   
   
-    </div></section>
-  
 
+
+
+<script>
+
+    $(function(){
+	    var width = document.body.scrollWidth;
+		if(width<=550){
+		    $("#recentComments").css("display","none");
+		}
+	})
+
+</script>
 
 </div>
       <!--

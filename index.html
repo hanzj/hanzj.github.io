@@ -131,6 +131,127 @@
 
 
   
+    <article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2017/06/28/oracle-dict/" class="article-date">
+  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">2017-06-28</time>
+</a>
+
+        </div>
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/28/oracle-dict/">oracle数据字典</a>
+    </h1>
+  
+
+
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                                    <p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
+    
+</div>
+<script>
+    $(function(){
+
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>
+
+                                                  
+                                            
+                                            -->
+                                            
+                                                     <ol>
+<li>查询用户下所有表<br>SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; </li>
+<li>查询表中所有字段<br>SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; </li>
+<li>查询表的索引列<br>SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE UPPER(T.TABLE_NAME) = ‘ZZ_TEST’ </li>
+<li>列出表中的约束<br>SELECT * FROM All_Constraints t WHERE t.table_name = ‘ZZ_TEST’  </li>
+<li>在oracle中描述数据字典视图<br>SELECT table_name , comments FROM DICTIONARY WHERE table_name LIKE ‘%TABLE%’ </li>
+</ol>
+
+                                            
+
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
+	</div>
+
+
+                            
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">work</a>
+	</div>
+
+
+                            
+                            
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                                <!-- 多说评论框 start -->
+                                
+</article>
+
+<!--
+
+-->
+<!--
+
+-->
+
+  
     <article id="post-Unhandled event loop exception" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({

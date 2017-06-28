@@ -4,21 +4,24 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
   
-  <title>Eclipse4.3.2 Unhandled event loop exception | hanzj&#39; Blog</title>
+  <title>oracle数据字典 | hanzj&#39; Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在使用Eclipse Kepler Service Release 2（4.3.2）安装插件的过程中，插件不能正常工作，并且在错误日志中输出Unhandled event loop exception。jdk使用的是64位1.8.2_65。google之说是软件冲突引起，关闭其它软件，问题依旧存在。
-最后修改jdk版本为64位1.7.0_80，问题解决。不清楚具体原因。">
+  <meta name="description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
+查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
+查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eclipse4.3.2 Unhandled event loop exception">
-<meta property="og:url" content="http://yoursite.com/2017/04/05/Unhandled event loop exception/index.html">
+<meta property="og:title" content="oracle数据字典">
+<meta property="og:url" content="http://yoursite.com/2017/06/28/oracle-dict/index.html">
 <meta property="og:site_name" content="hanzj' Blog">
-<meta property="og:description" content="在使用Eclipse Kepler Service Release 2（4.3.2）安装插件的过程中，插件不能正常工作，并且在错误日志中输出Unhandled event loop exception。jdk使用的是64位1.8.2_65。google之说是软件冲突引起，关闭其它软件，问题依旧存在。
-最后修改jdk版本为64位1.7.0_80，问题解决。不清楚具体原因。">
-<meta property="og:updated_time" content="2017-04-05T15:16:42.497Z">
+<meta property="og:description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
+查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
+查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
+<meta property="og:updated_time" content="2017-06-28T11:53:48.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclipse4.3.2 Unhandled event loop exception">
-<meta name="twitter:description" content="在使用Eclipse Kepler Service Release 2（4.3.2）安装插件的过程中，插件不能正常工作，并且在错误日志中输出Unhandled event loop exception。jdk使用的是64位1.8.2_65。google之说是软件冲突引起，关闭其它软件，问题依旧存在。
-最后修改jdk版本为64位1.7.0_80，问题解决。不清楚具体原因。">
+<meta name="twitter:title" content="oracle数据字典">
+<meta name="twitter:description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
+查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
+查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
   
     <link rel="alternative" href="/atom.xml" title="hanzj&#39; Blog" type="application/atom+xml">
   
@@ -132,7 +135,7 @@
 
 	  <!--是否开启最近通知-->
 	  
-      <div class="body-wrap"><article id="post-Unhandled event loop exception" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({
             cursorcolor: "#2a2929",
@@ -146,8 +149,8 @@
     </script>
     
         <div class="article-meta">
-            <a href="/2017/04/05/Unhandled event loop exception/" class="article-date">
-  	<time datetime="2017-04-05T15:01:12.613Z" itemprop="datePublished">2017-04-05</time>
+            <a href="/2017/06/28/oracle-dict/" class="article-date">
+  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">2017-06-28</time>
 </a>
 
         </div>
@@ -159,7 +162,7 @@
                                 
   
     <h1 class="article-title" itemprop="name">
-      Eclipse4.3.2 Unhandled event loop exception
+      oracle数据字典
     </h1>
   
 
@@ -204,8 +207,13 @@
                                             
                                             -->
                                             
-                                                     <p>在使用Eclipse Kepler Service Release 2（4.3.2）安装插件的过程中，插件不能正常工作，并且在错误日志中输出Unhandled event loop exception。jdk使用的是64位1.8.2_65。google之说是软件冲突引起，关闭其它软件，问题依旧存在。</p>
-<p>最后修改jdk版本为64位1.7.0_80，问题解决。不清楚具体原因。</p>
+                                                     <ol>
+<li>查询用户下所有表<br>SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; </li>
+<li>查询表中所有字段<br>SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; </li>
+<li>查询表的索引列<br>SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE UPPER(T.TABLE_NAME) = ‘ZZ_TEST’ </li>
+<li>列出表中的约束<br>SELECT * FROM All_Constraints t WHERE t.table_name = ‘ZZ_TEST’  </li>
+<li>在oracle中描述数据字典视图<br>SELECT table_name , comments FROM DICTIONARY WHERE table_name LIKE ‘%TABLE%’ </li>
+</ol>
 
                                             
 
@@ -217,7 +225,7 @@
                         <div class="article-info article-info-index">
                             
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
 	</div>
 
 
@@ -254,18 +262,9 @@
                         
 <nav id="article-nav">
   
-    <a href="/2017/06/28/oracle-dict/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          oracle数据字典
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/24/datatables-springmvc/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dataTables SpringMVC 中的数据绑定</div>
+    <a href="/2017/04/05/Unhandled event loop exception/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Eclipse4.3.2 Unhandled event loop exception</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
