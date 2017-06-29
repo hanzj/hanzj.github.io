@@ -4,24 +4,14 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
   
-  <title>oracle数据字典 | hanzj&#39; Blog</title>
+  <title>Tag: maven | hanzj&#39; Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
-查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
-查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
-<meta property="og:type" content="article">
-<meta property="og:title" content="oracle数据字典">
-<meta property="og:url" content="http://yoursite.com/2017/06/28/oracle-dict/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="hanzj' Blog">
+<meta property="og:url" content="http://yoursite.com/tags/maven/index.html">
 <meta property="og:site_name" content="hanzj' Blog">
-<meta property="og:description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
-查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
-查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
-<meta property="og:updated_time" content="2017-06-28T12:42:32.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oracle数据字典">
-<meta name="twitter:description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
-查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
-查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
+<meta name="twitter:title" content="hanzj' Blog">
   
     <link rel="alternative" href="/atom.xml" title="hanzj&#39; Blog" type="application/atom+xml">
   
@@ -135,7 +125,13 @@
 
 	  <!--是否开启最近通知-->
 	  
-      <div class="body-wrap"><article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><!-- 是否开启微简历 -->
+
+
+
+
+  
+    <article id="post-maven-practice" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({
             cursorcolor: "#2a2929",
@@ -149,8 +145,8 @@
     </script>
     
         <div class="article-meta">
-            <a href="/2017/06/28/oracle-dict/" class="article-date">
-  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">2017-06-28</time>
+            <a href="/2017/04/28/maven-practice/" class="article-date">
+  	<time datetime="2017-04-28T11:43:36.000Z" itemprop="datePublished">2017-04-28</time>
 </a>
 
         </div>
@@ -161,8 +157,8 @@
                             <header class="article-header">
                                 
   
-    <h1 class="article-title" itemprop="name">
-      oracle数据字典
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/28/maven-practice/">maven实战</a>
     </h1>
   
 
@@ -174,47 +170,10 @@
                                            <!--
                                             
 
-                                                    <p class="toc-button">目录</p>
-<div id="toc" class="toc-article" style="display:none;">
-    
-</div>
-<script>
-    $(function(){
-
-        var width = document.body.scrollWidth;
-        if (width <=550) {
-             $(".toc-button").css("display","none");
-        }
-        $(".toc-button").hover(function(){
-            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
-            $(".toc-article").css({
-                top:top +"px"
-            });
-            $("#toc").show(1000,function(){});
-           // $("#toc").animate({width:500;},3000);
-        },function(){
-
-        });
-        $(".toc-article").hover(function(){
-
-        },function(){
-            $("#toc").hide(1000,function(){});
-        });
-    })
-</script>
-
-                                                  
                                             
                                             -->
                                             
-                                                     <ol>
-<li>查询用户下所有表<br>SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; </li>
-<li>查询表中所有字段<br>SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; </li>
-<li>查询表的索引列<br>SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE UPPER(T.TABLE_NAME) = ‘ZZ_TEST’ </li>
-<li>列出表中的约束<br>SELECT * FROM All_Constraints t WHERE t.table_name = ‘ZZ_TEST’  </li>
-<li>在oracle中描述数据字典视图<br>SELECT table_name , comments FROM DICTIONARY WHERE table_name LIKE ‘%TABLE%’ </li>
-</ol>
-
+                                                     <h1 id="1-maven使用入门"><a href="#1-maven使用入门" class="headerlink" title="1. maven使用入门"></a>1. maven使用入门</h1><h2 id="1-1-编写POM"><a href="#1-1-编写POM" class="headerlink" title="1.1. 编写POM"></a>1.1. 编写POM</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.juvenxu.mvnbook<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hello-world<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span> Maven hello-world project<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
                                             
 
                                   
@@ -225,29 +184,18 @@
                         <div class="article-info article-info-index">
                             
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
 	</div>
 
 
                             
 
                             
+                                <p class="article-more-link">
+                                    <a  href="/2017/04/28/maven-practice/#more">展开全文 >></a>
+                                </p>
                             
-                                <div id="socialShare" style="margin-right:40px;display:none;"></div>
-                                <script>
-                                    $(function() {
-                                        var width = document.body.scrollWidth;
-                                        if (width > 550) {
-                                            $("#socialShare").css("display", "block");
-                                            $("#socialShare").socialShare({
-                                                content: 'Nice!不错的资源...',
-                                                url: window.location.href,
-                                                titile: ''
-                                            });
-                                        }
-                                    });
-                                </script>
-                                
+                            
 
                             <div class="clearfix"></div>
                         </div> <!-- 标签/分类/分享 end -->
@@ -255,34 +203,32 @@
             </div>
 
                     
-                        
-<nav id="article-nav">
-  
-  
-    <a href="/2017/04/28/maven-practice/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">maven实战</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-
-                            
                                 <!-- 多说评论框 start -->
                                 
 </article>
 
 <!--
 
-    <div style="width:100%;background-color:#fff;">
-        <div id="uyan_frame" style="margin:auto 10px 10px 10px;"></div>
-    </div>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2017540"></script>
-    
 -->
 <!--
 
 -->
+
+  
+  
+
+
+
+<script>
+
+    $(function(){
+	    var width = document.body.scrollWidth;
+		if(width<=550){
+		    $("#recentComments").css("display","none");
+		}
+	})
+
+</script>
 
 </div>
       <!--
