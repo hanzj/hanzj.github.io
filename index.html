@@ -131,6 +131,329 @@
 
 
   
+    <article id="post-oracle-install-sample" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2017/07/17/oracle-install-sample/" class="article-date">
+  	<time datetime="2017-07-17T06:50:27.153Z" itemprop="datePublished">2017-07-17</time>
+</a>
+
+        </div>
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/oracle-install-sample/">oracle安装sample schema</a>
+    </h1>
+  
+
+
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                                    <p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
+    
+</div>
+<script>
+    $(function(){
+
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>
+
+                                                  
+                                            
+                                            -->
+                                            
+                                                     <p>从github下载sample源码并上传至服务器<br><a href="https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1" target="_blank" rel="external">https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[hanzj@localhost demo]$ <span class="built_in">pwd</span></div><div class="line">/app/oracle/base/product/12.2.0/dbhome_1/demo</div><div class="line">[hanzj@localhost demo]$ cp ~/db-sample-schemas-12.2.0.1.zip  ./</div><div class="line">[hanzj@localhost demo]$ unzip db-sample-schemas-12.2.0.1.zip </div><div class="line">[hanzj@localhost demo]$ mv schema/ schema.bak</div><div class="line">[hanzj@localhost demo]$ ls</div><div class="line">db-sample-schemas-12.2.0.1  db-sample-schemas-12.2.0.1.zip  schema.bak</div><div class="line">[hanzj@localhost demo]$ mv db-sample-schemas-12.2.0.1  schema</div><div class="line">[hanzj@localhost demo]$ <span class="built_in">cd</span> schema</div><div class="line">[hanzj@localhost schema]$ sed -i <span class="string">"s#__SUB__CWD__#<span class="variable">$(pwd)</span>#g"</span> `grep __SUB__CWD__ -rl --include=<span class="string">"*.sql"</span> ./`</div></pre></td></tr></table></figure>
+<p>查看mksample.sql中<code>__SUB__CWD__</code>是否已经替换为据对路径。然后以sysdba登陆oracle执行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@?/demo/schema/mksample xchzj xchzj xchzj xchzj xchzj xchzj xchzj xchzj users temp '/tmp/log/' localhost:1521/orcl</div></pre></td></tr></table></figure></p>
+<p>以上语句含义如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@?/demo/schema/mksample &lt;SYSTEM_password&gt; &lt;SYS_password&gt;</div><div class="line"> 		&lt;HR_password&gt; &lt;OE_password&gt; &lt;PM_password&gt; &lt;IX_password&gt; </div><div class="line">		&lt;SH_password&gt; &lt;BI_password&gt; default_tablespace  temporary_tablespace </div><div class="line">		 log_file_directory  connect_string</div></pre></td></tr></table></figure></p>
+
+                                            
+
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
+	</div>
+
+
+                            
+
+                            
+                            
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                                <!-- 多说评论框 start -->
+                                
+</article>
+
+<!--
+
+-->
+<!--
+
+-->
+
+  
+    <article id="post-func" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2017/07/08/func/" class="article-date">
+  	<time datetime="2017-07-07T16:00:00.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+
+        </div>
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/func/">oracle常用函数</a>
+    </h1>
+  
+
+
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                                    <p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-字符类函数"><span class="toc-number">1.</span> <span class="toc-text">1. 字符类函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-SCCII"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. SCCII</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-CHR"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. CHR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-CONCAT"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. CONCAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-INITCAP"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. INITCAP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-INSTR-c1-c2-i-n"><span class="toc-number">1.5.</span> <span class="toc-text">1.5. INSTR(c1,c2,i,n)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-LENGTH"><span class="toc-number">1.6.</span> <span class="toc-text">1.6. LENGTH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-UPPER-和-LOWER"><span class="toc-number">1.7.</span> <span class="toc-text">1.7. UPPER 和 LOWER</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-LTRIM-和-RTRIM"><span class="toc-number">1.8.</span> <span class="toc-text">1.8. LTRIM 和 RTRIM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-TRIM"><span class="toc-number">1.9.</span> <span class="toc-text">1.9. TRIM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-LPAD-和-RPAD"><span class="toc-number">1.10.</span> <span class="toc-text">1.10. LPAD 和 RPAD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-SUBSTR-c-i-j"><span class="toc-number">1.11.</span> <span class="toc-text">1.11. SUBSTR(c,i[,j])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-REPLACE-c1-c2-c3"><span class="toc-number">1.12.</span> <span class="toc-text">1.12. REPLACE(c1,c2[,c3])</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数字类函数"><span class="toc-number">2.</span> <span class="toc-text">数字类函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日期函数"><span class="toc-number">3.</span> <span class="toc-text">日期函数</span></a></li></ol>
+</div>
+<script>
+    $(function(){
+
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>
+
+                                                  
+                                            
+                                            -->
+                                            
+                                                     <h1 id="1-字符类函数"><a href="#1-字符类函数" class="headerlink" title="1. 字符类函数"></a>1. 字符类函数</h1><h2 id="1-1-SCCII"><a href="#1-1-SCCII" class="headerlink" title="1.1. SCCII"></a>1.1. SCCII</h2><p>返回第一个字母的ASCII码<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> ascii(<span class="string">'abc'</span>) from dual ;</div><div class="line"></div><div class="line">ASCII(<span class="string">'ABC'</span>)</div><div class="line">------------</div><div class="line">          <span class="number">97</span></div></pre></td></tr></table></figure></p>
+<h2 id="1-2-CHR"><a href="#1-2-CHR" class="headerlink" title="1.2. CHR"></a>1.2. CHR</h2><p>返回数值对应的SCII字符<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> chr(<span class="number">97</span>) from dual  ;</div><div class="line"></div><div class="line">CHR(<span class="number">97</span>)</div><div class="line">-------</div><div class="line">a</div></pre></td></tr></table></figure></p>
+<h2 id="1-3-CONCAT"><a href="#1-3-CONCAT" class="headerlink" title="1.3. CONCAT"></a>1.3. CONCAT</h2><p>连接两个字符串，相当于 ‘a’ || ‘b’<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> concat(<span class="string">'a'</span>,<span class="string">'b'</span>) from dual ;</div><div class="line"></div><div class="line">CONCAT(<span class="string">'A'</span>,<span class="string">'B'</span>)</div><div class="line">---------------</div><div class="line">ab</div></pre></td></tr></table></figure></p>
+<h2 id="1-4-INITCAP"><a href="#1-4-INITCAP" class="headerlink" title="1.4. INITCAP"></a>1.4. INITCAP</h2><p>每个单词首字母大写，其他字母小写<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> initcap(<span class="string">'aBC def'</span>) from dual ;</div><div class="line"></div><div class="line">INITCAP(<span class="string">'ABCDEF'</span>)</div><div class="line">-----------------</div><div class="line">Abc Def</div></pre></td></tr></table></figure></p>
+<h2 id="1-5-INSTR-c1-c2-i-n"><a href="#1-5-INSTR-c1-c2-i-n" class="headerlink" title="1.5. INSTR(c1,c2,i,n)"></a>1.5. INSTR(c1,c2,i,n)</h2><p>从字符串c1的第i个字符串开始搜索c2出现第n次的位置<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> instr(<span class="string">'abcabcabc'</span>,<span class="string">'a'</span>,<span class="string">'4'</span>,<span class="number">2</span>) from dual ;</div><div class="line"></div><div class="line">INSTR(<span class="string">'ABCABCABC'</span>,<span class="string">'A'</span>,<span class="string">'4'</span>,<span class="number">2</span>)</div><div class="line">----------------------------</div><div class="line">                           <span class="number">7</span></div><div class="line"></div><div class="line">SQL&gt; <span class="keyword">select</span> instr(<span class="string">'abcabcabc'</span>,<span class="string">'a'</span>,<span class="string">'-3'</span>,<span class="number">2</span>) from dual ;</div><div class="line"></div><div class="line">INSTR(<span class="string">'ABCABCABC'</span>,<span class="string">'A'</span>,<span class="string">'-3'</span>,<span class="number">2</span>)</div><div class="line">-----------------------------</div><div class="line">                            <span class="number">4</span></div></pre></td></tr></table></figure></p>
+<h2 id="1-6-LENGTH"><a href="#1-6-LENGTH" class="headerlink" title="1.6. LENGTH"></a>1.6. LENGTH</h2><p>返回字符串长度<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> length(<span class="string">'abc'</span>) from dual ;</div><div class="line"></div><div class="line">LENGTH(<span class="string">'ABC'</span>)</div><div class="line">-------------</div><div class="line">            <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<h2 id="1-7-UPPER-和-LOWER"><a href="#1-7-UPPER-和-LOWER" class="headerlink" title="1.7. UPPER 和 LOWER"></a>1.7. UPPER 和 LOWER</h2><p>返回大/小写<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> upper(<span class="string">'a'</span>),lower(<span class="string">'B'</span>) from dual ;</div><div class="line"></div><div class="line">UPPER(<span class="string">'A'</span>) LOWER(<span class="string">'B'</span>)</div><div class="line">---------- ----------</div><div class="line">A          b</div></pre></td></tr></table></figure></p>
+<h2 id="1-8-LTRIM-和-RTRIM"><a href="#1-8-LTRIM-和-RTRIM" class="headerlink" title="1.8. LTRIM 和 RTRIM"></a>1.8. LTRIM 和 RTRIM</h2><p>删除左边/右边出现的字符串<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> ltrim(<span class="string">' abc'</span>),ltrim(<span class="string">' abc'</span>,<span class="string">'a'</span>),ltrim(<span class="string">'abc'</span>,<span class="string">'a'</span>) from dual ;</div><div class="line"></div><div class="line">LTRIM(<span class="string">'ABC'</span>) LTRIM(<span class="string">'ABC'</span>,<span class="string">'A'</span>) LTRIM(<span class="string">'ABC'</span>,<span class="string">'A'</span>)</div><div class="line">------------ ---------------- ----------------</div><div class="line">abc           abc             bc</div></pre></td></tr></table></figure></p>
+<h2 id="1-9-TRIM"><a href="#1-9-TRIM" class="headerlink" title="1.9. TRIM"></a>1.9. TRIM</h2><p>去除两边的空格<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> trim(<span class="string">' abca '</span>) from dual ;</div><div class="line"></div><div class="line">TRIM(<span class="string">'ABCA'</span>)</div><div class="line">------------</div><div class="line">abca</div></pre></td></tr></table></figure></p>
+<h2 id="1-10-LPAD-和-RPAD"><a href="#1-10-LPAD-和-RPAD" class="headerlink" title="1.10. LPAD 和 RPAD"></a>1.10. LPAD 和 RPAD</h2><p>在左边/右边填充字符串<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> lpad(<span class="string">'abc'</span>,<span class="number">6</span>,<span class="string">'*'</span>),rpad(<span class="string">'abc'</span>,<span class="number">6</span>,<span class="string">'*'</span>) from dual ;</div><div class="line"></div><div class="line">LPAD(<span class="string">'ABC'</span>,<span class="number">6</span>,<span class="string">'*'</span>) RPAD(<span class="string">'ABC'</span>,<span class="number">6</span>,<span class="string">'*'</span>)</div><div class="line">----------------- -----------------</div><div class="line">***abc            abc***</div><div class="line"></div><div class="line">SQL&gt; <span class="keyword">select</span> lpad(<span class="string">'abc'</span>,<span class="number">2</span>,<span class="string">'*'</span>),lpad(<span class="string">'abc'</span>,<span class="number">2</span>),rpad(<span class="string">'abc'</span>,<span class="number">2</span>,<span class="string">'*'</span>),rpad(<span class="string">'abc'</span>,<span class="number">2</span>) from dual ;</div><div class="line"></div><div class="line">LPAD(<span class="string">'ABC'</span>,<span class="number">2</span>,<span class="string">'*'</span>) LPAD(<span class="string">'ABC'</span>,<span class="number">2</span>) RPAD(<span class="string">'ABC'</span>,<span class="number">2</span>,<span class="string">'*'</span>) RPAD(<span class="string">'ABC'</span>,<span class="number">2</span>)</div><div class="line">----------------- ------------- ----------------- -------------</div><div class="line">ab                ab            ab                ab</div></pre></td></tr></table></figure></p>
+<h2 id="1-11-SUBSTR-c-i-j"><a href="#1-11-SUBSTR-c-i-j" class="headerlink" title="1.11. SUBSTR(c,i[,j])"></a>1.11. SUBSTR(c,i[,j])</h2><p>从c的第i位开始截取长度为j的字符串，j为空截取到尾部，i为负从右边数第i位开始<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">select</span> substr(<span class="string">'abcdef'</span>,<span class="number">-4</span>,<span class="number">2</span>) from dual ;</div><div class="line"></div><div class="line">SUBSTR(<span class="string">'ABCDEF'</span>,<span class="number">-4</span>,<span class="number">2</span>)</div><div class="line">---------------------</div><div class="line">cd</div></pre></td></tr></table></figure></p>
+<h2 id="1-12-REPLACE-c1-c2-c3"><a href="#1-12-REPLACE-c1-c2-c3" class="headerlink" title="1.12. REPLACE(c1,c2[,c3])"></a>1.12. REPLACE(c1,c2[,c3])</h2><p>用c3替换c1中的c2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; select replace(&apos;abc&apos;,&apos;c&apos;),replace(&apos;abc&apos;,&apos;c&apos;,&apos;2&apos;) from dual ;</div><div class="line"></div><div class="line">REPLACE(&apos;ABC&apos;,&apos;C&apos;) REPLACE(&apos;ABC&apos;,&apos;C&apos;,&apos;2&apos;)</div><div class="line">------------------ ----------------------</div><div class="line">ab                 ab2</div></pre></td></tr></table></figure></p>
+<h1 id="数字类函数"><a href="#数字类函数" class="headerlink" title="数字类函数"></a>数字类函数</h1><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>ABS(n)</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>02</td>
+<td>CEIL(n)</td>
+<td>大于等于n的最小整数</td>
+</tr>
+<tr>
+<td>03</td>
+<td>FLOOR(n)</td>
+<td>小于等于n的最小整数</td>
+</tr>
+<tr>
+<td>04</td>
+<td>MOD(n1,n2)</td>
+<td>n1/n2 的余数</td>
+</tr>
+<tr>
+<td>05</td>
+<td>POWER(n1,n2)</td>
+<td>n1的n2次方</td>
+</tr>
+<tr>
+<td>06</td>
+<td>ROUND(n1,n2)</td>
+<td>返回舍入小数点右边n2位的n1的值</td>
+</tr>
+<tr>
+<td>07</td>
+<td>SQRT(n)</td>
+<td>n的平方根</td>
+</tr>
+<tr>
+<td>08</td>
+<td>TRUNC(n1,n2)</td>
+<td>用于返回截尾到n2位小数的n1的值</td>
+</tr>
+</tbody>
+</table>
+<h1 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h1><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>ADD_MONTHS(d,i)</td>
+<td>日期d加上i个月</td>
+</tr>
+<tr>
+<td>02</td>
+<td>LAST_DAY(d)</td>
+<td>d月份的最后一天</td>
+</tr>
+<tr>
+<td>03</td>
+<td>MONTHS_BETWEEN(d1,d2)</td>
+<td>间隔的月数</td>
+</tr>
+<tr>
+<td>04</td>
+<td>NEW_TIME(d1,tz1,tz2)</td>
+<td>转换时区tz1的日期d1对应的tz2时区时间</td>
+</tr>
+<tr>
+<td>05</td>
+<td>SYSDATE</td>
+<td>当前的系统时间</td>
+</tr>
+</tbody>
+</table>
+
+                                            
+
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
+	</div>
+
+
+                            
+
+                            
+                            
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                                <!-- 多说评论框 start -->
+                                
+</article>
+
+<!--
+
+-->
+<!--
+
+-->
+
+  
     <article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({

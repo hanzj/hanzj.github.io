@@ -4,24 +4,21 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
   
-  <title>oracle数据字典 | hanzj&#39; Blog</title>
+  <title>oracle安装sample schema | hanzj&#39; Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
-查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
-查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
+  <meta name="description" content="从github下载sample源码并上传至服务器https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1
+12345678910[hanzj@localhost demo]$ pwd/app/oracle/base/product/12.2.0/dbhome_1/demo[hanzj@localhost demo]$ cp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oracle数据字典">
-<meta property="og:url" content="http://yoursite.com/2017/06/28/oracle-dict/index.html">
+<meta property="og:title" content="oracle安装sample schema">
+<meta property="og:url" content="http://yoursite.com/2017/07/17/oracle-install-sample/index.html">
 <meta property="og:site_name" content="hanzj' Blog">
-<meta property="og:description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
-查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
-查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
-<meta property="og:updated_time" content="2017-06-28T12:42:32.923Z">
+<meta property="og:description" content="从github下载sample源码并上传至服务器https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1
+12345678910[hanzj@localhost demo]$ pwd/app/oracle/base/product/12.2.0/dbhome_1/demo[hanzj@localhost demo]$ cp">
+<meta property="og:updated_time" content="2017-07-17T06:56:31.167Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oracle数据字典">
-<meta name="twitter:description" content="查询用户下所有表SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; 
-查询表中所有字段SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; 
-查询表的索引列SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE">
+<meta name="twitter:title" content="oracle安装sample schema">
+<meta name="twitter:description" content="从github下载sample源码并上传至服务器https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1
+12345678910[hanzj@localhost demo]$ pwd/app/oracle/base/product/12.2.0/dbhome_1/demo[hanzj@localhost demo]$ cp">
   
     <link rel="alternative" href="/atom.xml" title="hanzj&#39; Blog" type="application/atom+xml">
   
@@ -135,7 +132,7 @@
 
 	  <!--是否开启最近通知-->
 	  
-      <div class="body-wrap"><article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-oracle-install-sample" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({
             cursorcolor: "#2a2929",
@@ -149,8 +146,8 @@
     </script>
     
         <div class="article-meta">
-            <a href="/2017/06/28/oracle-dict/" class="article-date">
-  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">2017-06-28</time>
+            <a href="/2017/07/17/oracle-install-sample/" class="article-date">
+  	<time datetime="2017-07-17T06:50:27.153Z" itemprop="datePublished">2017-07-17</time>
 </a>
 
         </div>
@@ -162,7 +159,7 @@
                                 
   
     <h1 class="article-title" itemprop="name">
-      oracle数据字典
+      oracle安装sample schema
     </h1>
   
 
@@ -207,13 +204,10 @@
                                             
                                             -->
                                             
-                                                     <ol>
-<li>查询用户下所有表<br>SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; </li>
-<li>查询表中所有字段<br>SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; </li>
-<li>查询表的索引列<br>SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE UPPER(T.TABLE_NAME) = ‘ZZ_TEST’ </li>
-<li>列出表中的约束<br>SELECT * FROM All_Constraints t WHERE t.table_name = ‘ZZ_TEST’  </li>
-<li>在oracle中描述数据字典视图<br>SELECT table_name , comments FROM DICTIONARY WHERE table_name LIKE ‘%TABLE%’ </li>
-</ol>
+                                                     <p>从github下载sample源码并上传至服务器<br><a href="https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1" target="_blank" rel="external">https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[hanzj@localhost demo]$ <span class="built_in">pwd</span></div><div class="line">/app/oracle/base/product/12.2.0/dbhome_1/demo</div><div class="line">[hanzj@localhost demo]$ cp ~/db-sample-schemas-12.2.0.1.zip  ./</div><div class="line">[hanzj@localhost demo]$ unzip db-sample-schemas-12.2.0.1.zip </div><div class="line">[hanzj@localhost demo]$ mv schema/ schema.bak</div><div class="line">[hanzj@localhost demo]$ ls</div><div class="line">db-sample-schemas-12.2.0.1  db-sample-schemas-12.2.0.1.zip  schema.bak</div><div class="line">[hanzj@localhost demo]$ mv db-sample-schemas-12.2.0.1  schema</div><div class="line">[hanzj@localhost demo]$ <span class="built_in">cd</span> schema</div><div class="line">[hanzj@localhost schema]$ sed -i <span class="string">"s#__SUB__CWD__#<span class="variable">$(pwd)</span>#g"</span> `grep __SUB__CWD__ -rl --include=<span class="string">"*.sql"</span> ./`</div></pre></td></tr></table></figure>
+<p>查看mksample.sql中<code>__SUB__CWD__</code>是否已经替换为据对路径。然后以sysdba登陆oracle执行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@?/demo/schema/mksample xchzj xchzj xchzj xchzj xchzj xchzj xchzj xchzj users temp '/tmp/log/' localhost:1521/orcl</div></pre></td></tr></table></figure></p>
+<p>以上语句含义如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@?/demo/schema/mksample &lt;SYSTEM_password&gt; &lt;SYS_password&gt;</div><div class="line"> 		&lt;HR_password&gt; &lt;OE_password&gt; &lt;PM_password&gt; &lt;IX_password&gt; </div><div class="line">		&lt;SH_password&gt; &lt;BI_password&gt; default_tablespace  temporary_tablespace </div><div class="line">		 log_file_directory  connect_string</div></pre></td></tr></table></figure></p>
 
                                             
 
@@ -258,18 +252,9 @@
                         
 <nav id="article-nav">
   
-    <a href="/2017/07/08/func/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          oracle常用函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/28/maven-practice/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">maven实战</div>
+    <a href="/2017/07/08/func/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">oracle常用函数</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

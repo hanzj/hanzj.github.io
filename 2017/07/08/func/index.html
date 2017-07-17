@@ -4,14 +4,24 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="6fea7fc7276fc383ec5b2080c662f076"/>
   
-  <title>Tag: oracle | hanzj&#39; Blog</title>
+  <title>oracle常用函数 | hanzj&#39; Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hanzj' Blog">
-<meta property="og:url" content="http://yoursite.com/tags/oracle/index.html">
+  <meta name="description" content="1. 字符类函数1.1. SCCII返回第一个字母的ASCII码12345SQL&amp;gt; select ascii(&apos;abc&apos;) from dual ;ASCII(&apos;ABC&apos;)------------          97
+1.2. CHR返回数值对应的SCII字符12345SQL&amp;gt; select chr(97) from dual  ;CHR(97)-------a
+1.3. CONCA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle常用函数">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/func/index.html">
 <meta property="og:site_name" content="hanzj' Blog">
+<meta property="og:description" content="1. 字符类函数1.1. SCCII返回第一个字母的ASCII码12345SQL&amp;gt; select ascii(&apos;abc&apos;) from dual ;ASCII(&apos;ABC&apos;)------------          97
+1.2. CHR返回数值对应的SCII字符12345SQL&amp;gt; select chr(97) from dual  ;CHR(97)-------a
+1.3. CONCA">
+<meta property="og:updated_time" content="2017-07-17T07:02:08.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hanzj' Blog">
+<meta name="twitter:title" content="oracle常用函数">
+<meta name="twitter:description" content="1. 字符类函数1.1. SCCII返回第一个字母的ASCII码12345SQL&amp;gt; select ascii(&apos;abc&apos;) from dual ;ASCII(&apos;ABC&apos;)------------          97
+1.2. CHR返回数值对应的SCII字符12345SQL&amp;gt; select chr(97) from dual  ;CHR(97)-------a
+1.3. CONCA">
   
     <link rel="alternative" href="/atom.xml" title="hanzj&#39; Blog" type="application/atom+xml">
   
@@ -125,127 +135,7 @@
 
 	  <!--是否开启最近通知-->
 	  
-      <div class="body-wrap"><!-- 是否开启微简历 -->
-
-
-
-
-  
-    <article id="post-oracle-install-sample" class="article article-type-post" itemscope itemprop="blogPost">
-    <script>
-        $("html").niceScroll({
-            cursorcolor: "#2a2929",
-            cursoropacitymax: 1,
-            touchbehavior: false,
-            cursorwidth: "6px",
-            cursorborder: "5",
-            cursorborderradius: "0px",
-            autohidemode: true
-        });
-    </script>
-    
-        <div class="article-meta">
-            <a href="/2017/07/17/oracle-install-sample/" class="article-date">
-  	<time datetime="2017-07-17T06:50:27.153Z" itemprop="datePublished">2017-07-17</time>
-</a>
-
-        </div>
-        
-            <div class="article-inner">
-                
-                        
-                            <header class="article-header">
-                                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/17/oracle-install-sample/">oracle安装sample schema</a>
-    </h1>
-  
-
-
-                            </header>
-                        
-
-                                        <div class="article-entry" itemprop="articleBody">
-                                           <!--
-                                            
-
-                                                    <p class="toc-button">目录</p>
-<div id="toc" class="toc-article" style="display:none;">
-    
-</div>
-<script>
-    $(function(){
-
-        var width = document.body.scrollWidth;
-        if (width <=550) {
-             $(".toc-button").css("display","none");
-        }
-        $(".toc-button").hover(function(){
-            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
-            $(".toc-article").css({
-                top:top +"px"
-            });
-            $("#toc").show(1000,function(){});
-           // $("#toc").animate({width:500;},3000);
-        },function(){
-
-        });
-        $(".toc-article").hover(function(){
-
-        },function(){
-            $("#toc").hide(1000,function(){});
-        });
-    })
-</script>
-
-                                                  
-                                            
-                                            -->
-                                            
-                                                     <p>从github下载sample源码并上传至服务器<br><a href="https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1" target="_blank" rel="external">https://github.com/oracle/db-sample-schemas/releases/tag/v12.2.0.1</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[hanzj@localhost demo]$ <span class="built_in">pwd</span></div><div class="line">/app/oracle/base/product/12.2.0/dbhome_1/demo</div><div class="line">[hanzj@localhost demo]$ cp ~/db-sample-schemas-12.2.0.1.zip  ./</div><div class="line">[hanzj@localhost demo]$ unzip db-sample-schemas-12.2.0.1.zip </div><div class="line">[hanzj@localhost demo]$ mv schema/ schema.bak</div><div class="line">[hanzj@localhost demo]$ ls</div><div class="line">db-sample-schemas-12.2.0.1  db-sample-schemas-12.2.0.1.zip  schema.bak</div><div class="line">[hanzj@localhost demo]$ mv db-sample-schemas-12.2.0.1  schema</div><div class="line">[hanzj@localhost demo]$ <span class="built_in">cd</span> schema</div><div class="line">[hanzj@localhost schema]$ sed -i <span class="string">"s#__SUB__CWD__#<span class="variable">$(pwd)</span>#g"</span> `grep __SUB__CWD__ -rl --include=<span class="string">"*.sql"</span> ./`</div></pre></td></tr></table></figure>
-<p>查看mksample.sql中<code>__SUB__CWD__</code>是否已经替换为据对路径。然后以sysdba登陆oracle执行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@?/demo/schema/mksample xchzj xchzj xchzj xchzj xchzj xchzj xchzj xchzj users temp '/tmp/log/' localhost:1521/orcl</div></pre></td></tr></table></figure></p>
-<p>以上语句含义如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@?/demo/schema/mksample &lt;SYSTEM_password&gt; &lt;SYS_password&gt;</div><div class="line"> 		&lt;HR_password&gt; &lt;OE_password&gt; &lt;PM_password&gt; &lt;IX_password&gt; </div><div class="line">		&lt;SH_password&gt; &lt;BI_password&gt; default_tablespace  temporary_tablespace </div><div class="line">		 log_file_directory  connect_string</div></pre></td></tr></table></figure></p>
-
-                                            
-
-                                  
-
-                          </div>
-
-                        <!-- 标签/分类/分享 start -->
-                        <div class="article-info article-info-index">
-                            
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
-	</div>
-
-
-                            
-
-                            
-                            
-
-                            <div class="clearfix"></div>
-                        </div> <!-- 标签/分类/分享 end -->
-                                          
-            </div>
-
-                    
-                                <!-- 多说评论框 start -->
-                                
-</article>
-
-<!--
-
--->
-<!--
-
--->
-
-  
-    <article id="post-func" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-func" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({
             cursorcolor: "#2a2929",
@@ -271,8 +161,8 @@
                             <header class="article-header">
                                 
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/func/">oracle常用函数</a>
+    <h1 class="article-title" itemprop="name">
+      oracle常用函数
     </h1>
   
 
@@ -435,6 +325,21 @@
 
                             
                             
+                                <div id="socialShare" style="margin-right:40px;display:none;"></div>
+                                <script>
+                                    $(function() {
+                                        var width = document.body.scrollWidth;
+                                        if (width > 550) {
+                                            $("#socialShare").css("display", "block");
+                                            $("#socialShare").socialShare({
+                                                content: 'Nice!不错的资源...',
+                                                url: window.location.href,
+                                                titile: ''
+                                            });
+                                        }
+                                    });
+                                </script>
+                                
 
                             <div class="clearfix"></div>
                         </div> <!-- 标签/分类/分享 end -->
@@ -442,149 +347,43 @@
             </div>
 
                     
-                                <!-- 多说评论框 start -->
-                                
-</article>
-
-<!--
-
--->
-<!--
-
--->
-
+                        
+<nav id="article-nav">
   
-    <article id="post-oracle-dict" class="article article-type-post" itemscope itemprop="blogPost">
-    <script>
-        $("html").niceScroll({
-            cursorcolor: "#2a2929",
-            cursoropacitymax: 1,
-            touchbehavior: false,
-            cursorwidth: "6px",
-            cursorborder: "5",
-            cursorborderradius: "0px",
-            autohidemode: true
-        });
-    </script>
-    
-        <div class="article-meta">
-            <a href="/2017/06/28/oracle-dict/" class="article-date">
-  	<time datetime="2017-06-28T11:43:36.000Z" itemprop="datePublished">2017-06-28</time>
-</a>
-
-        </div>
+    <a href="/2017/07/17/oracle-install-sample/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
-            <div class="article-inner">
-                
-                        
-                            <header class="article-header">
-                                
+          oracle安装sample schema
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/28/oracle-dict/">oracle数据字典</a>
-    </h1>
   
-
-
-                            </header>
-                        
-
-                                        <div class="article-entry" itemprop="articleBody">
-                                           <!--
-                                            
-
-                                                    <p class="toc-button">目录</p>
-<div id="toc" class="toc-article" style="display:none;">
-    
-</div>
-<script>
-    $(function(){
-
-        var width = document.body.scrollWidth;
-        if (width <=550) {
-             $(".toc-button").css("display","none");
-        }
-        $(".toc-button").hover(function(){
-            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
-            $(".toc-article").css({
-                top:top +"px"
-            });
-            $("#toc").show(1000,function(){});
-           // $("#toc").animate({width:500;},3000);
-        },function(){
-
-        });
-        $(".toc-article").hover(function(){
-
-        },function(){
-            $("#toc").hide(1000,function(){});
-        });
-    })
-</script>
-
-                                                  
-                                            
-                                            -->
-                                            
-                                                     <ol>
-<li>查询用户下所有表<br>SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = ‘BYD_PORTAL_BPM’; </li>
-<li>查询表中所有字段<br>SELECT * FROM All_Tab_Columns  t WHERE t.TABLE_NAME = ‘ZZ_TEST’ ; </li>
-<li>查询表的索引列<br>SELECT * FROM SYS.ALL_IND_COLUMNS T WHERE UPPER(T.TABLE_NAME) = ‘ZZ_TEST’ </li>
-<li>列出表中的约束<br>SELECT * FROM All_Constraints t WHERE t.table_name = ‘ZZ_TEST’  </li>
-<li>在oracle中描述数据字典视图<br>SELECT table_name , comments FROM DICTIONARY WHERE table_name LIKE ‘%TABLE%’ </li>
-</ol>
-
-                                            
-
-                                  
-
-                          </div>
-
-                        <!-- 标签/分类/分享 start -->
-                        <div class="article-info article-info-index">
-                            
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li></ul>
-	</div>
+    <a href="/2017/06/28/oracle-dict/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">oracle数据字典</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
 
                             
-
-                            
-                            
-
-                            <div class="clearfix"></div>
-                        </div> <!-- 标签/分类/分享 end -->
-                                          
-            </div>
-
-                    
                                 <!-- 多说评论框 start -->
                                 
 </article>
 
 <!--
 
+    <div style="width:100%;background-color:#fff;">
+        <div id="uyan_frame" style="margin:auto 10px 10px 10px;"></div>
+    </div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2017540"></script>
+    
 -->
 <!--
 
 -->
-
-  
-  
-
-
-
-<script>
-
-    $(function(){
-	    var width = document.body.scrollWidth;
-		if(width<=550){
-		    $("#recentComments").css("display","none");
-		}
-	})
-
-</script>
 
 </div>
       <!--
