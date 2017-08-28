@@ -131,6 +131,122 @@
 
 
   
+    <article id="post-mysql57-timestamp-error" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        $("html").niceScroll({
+            cursorcolor: "#2a2929",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "6px",
+            cursorborder: "5",
+            cursorborderradius: "0px",
+            autohidemode: true
+        });
+    </script>
+    
+        <div class="article-meta">
+            <a href="/2017/08/28/mysql57-timestamp-error/" class="article-date">
+  	<time datetime="2017-08-27T16:00:00.000Z" itemprop="datePublished">2017-08-28</time>
+</a>
+
+        </div>
+        
+            <div class="article-inner">
+                
+                        
+                            <header class="article-header">
+                                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/28/mysql57-timestamp-error/">mysql5.7多个timestamp字段error</a>
+    </h1>
+  
+
+
+                            </header>
+                        
+
+                                        <div class="article-entry" itemprop="articleBody">
+                                           <!--
+                                            
+
+                                                    <p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
+    
+</div>
+<script>
+    $(function(){
+
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>
+
+                                                  
+                                            
+                                            -->
+                                            
+                                                     <p>在mysql5.7中，表中有多个timestamp字段时报以下error</p>
+<p>Invalid default value for ‘timestamp’</p>
+<p>解决方案：</p>
+<p>修改/etc/my.cnf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line">explicit_defaults_for_timestamp = true</div></pre></td></tr></table></figure>
+<p>参考：<a href="http://blog.csdn.net/ghsau/article/details/45625841" target="_blank" rel="external">MySQL从5.5升级到5.6，TIMESTAMP的变化</a></p>
+
+                                            
+
+                                  
+
+                          </div>
+
+                        <!-- 标签/分类/分享 start -->
+                        <div class="article-info article-info-index">
+                            
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+	</div>
+
+
+                            
+
+                            
+                            
+
+                            <div class="clearfix"></div>
+                        </div> <!-- 标签/分类/分享 end -->
+                                          
+            </div>
+
+                    
+                                <!-- 多说评论框 start -->
+                                
+</article>
+
+<!--
+
+-->
+<!--
+
+-->
+
+  
     <article id="post-oracle-install-sample" class="article article-type-post" itemscope itemprop="blogPost">
     <script>
         $("html").niceScroll({
