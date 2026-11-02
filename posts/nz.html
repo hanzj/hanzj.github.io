@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定投进度报表 - 021000</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;
+         background:#f4f6fb; color:#1f2937; padding:32px 16px; }
+  .wrap { max-width:1080px; margin:0 auto; }
+  header { background:linear-gradient(135deg,#1e3a8a 0%,#3b82f6 100%);
+           border-radius:16px; padding:32px 36px; color:#fff; margin-bottom:24px;
+           box-shadow:0 8px 24px rgba(30,58,138,.25); }
+  header h1 { font-size:26px; margin-bottom:8px; }
+  header .sub { opacity:.85; font-size:14px; line-height:1.8; }
+  header .big { font-size:34px; font-weight:700; margin-top:6px; }
+  .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+             gap:14px; margin-bottom:24px; }
+  .s-item { background:#fff; border-radius:12px; padding:18px 20px;
+            box-shadow:0 2px 8px rgba(0,0,0,.05); }
+  .s-item .label { font-size:13px; color:#6b7280; margin-bottom:6px; }
+  .s-item .value { font-size:22px; font-weight:700; color:#111827; }
+  .s-item .value.blue { color:#1d4ed8; }
+  .s-item .value.red { color:#dc2626; }
+  .cmp-item { grid-column: 1 / -1; }
+  .cmp-item .cmp { font-size:15px; font-weight:600; display:flex; flex-wrap:wrap; gap:8px 14px; }
+  .cmp-item .sep { color:#d1d5db; font-weight:400; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+           gap:18px; margin-bottom:24px; }
+  .card { background:#fff; border-radius:14px; padding:22px 24px;
+          box-shadow:0 2px 10px rgba(0,0,0,.06); }
+  .card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+  .badge { color:#fff; padding:5px 14px; border-radius:20px; font-weight:600; font-size:14px; }
+  .daily { font-size:13px; color:#6b7280; }
+  .bar-wrap { height:10px; background:#e5e7eb; border-radius:5px; overflow:hidden; }
+  .bar { height:100%; border-radius:5px; transition:width .6s ease; }
+  .bar-note { font-size:12px; color:#9ca3af; margin:6px 0 12px; }
+  table.mini { width:100%; border-collapse:collapse; font-size:14px; }
+  table.mini td { padding:7px 0; border-bottom:1px dashed #eef1f5; }
+  table.mini tr:last-child td { border-bottom:none; }
+  table.mini td:first-child { color:#6b7280; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .strong { font-weight:700; }
+  .gap { color:#dc2626; font-weight:700; }
+  .pos { color:#16a34a; }
+  .neg { color:#dc2626; }
+  section.box { background:#fff; border-radius:14px; padding:22px 26px;
+                box-shadow:0 2px 10px rgba(0,0,0,.06); margin-bottom:24px; }
+  section.box h2 { font-size:17px; margin-bottom:14px; color:#111827;
+                   border-left:4px solid #3b82f6; padding-left:10px; }
+  table.data { width:100%; border-collapse:collapse; font-size:14px; }
+  table.data th { background:#f0f4ff; color:#1e3a8a; padding:10px 12px; text-align:left;
+                  font-weight:600; }
+  table.data td { padding:9px 12px; border-bottom:1px solid #f1f3f8; }
+  table.data tr:last-child td { border-bottom:none; }
+  .pager { display:flex; justify-content:flex-end; align-items:center; gap:12px;
+           margin-top:14px; font-size:13px; color:#6b7280; }
+  .pager button { background:#f0f4ff; color:#1e3a8a; border:1px solid #dbe4ff;
+                  border-radius:8px; padding:6px 14px; font-size:13px; cursor:pointer;
+                  transition:all .15s; }
+  .pager button:hover { background:#1e3a8a; color:#fff; border-color:#1e3a8a; }
+  .note { font-size:13px; color:#9ca3af; line-height:1.9; margin-top:12px; }
+  footer { text-align:center; color:#9ca3af; font-size:12px; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📊 定投进度报表</h1>
+    <div class="sub">标的代码：021000 ｜ 计划开始：2026-06-01（周一）
+      ｜ 统计截止：2026-11-02（周一）｜ 每目标账户 ¥1,000,000.00</div>
+  </header>
+
+  <div class="summary">
+    <div class="s-item"><div class="label">三账户实际本金合计</div><div class="value">¥43,626.76</div></div>
+    <div class="s-item"><div class="label">三账户应投本金合计</div><div class="value blue">¥64,260.00</div></div>
+    <div class="s-item"><div class="label">三账户实际比计划（合计）</div><div class="value"><span class="pos">-¥20,633.24</span></div></div>
+    <div class="s-item"><div class="label">三账户累计收益合计</div><div class="value blue">¥438.67</div></div>
+    <div class="s-item"><div class="label">距三账户 300 万总目标还差</div><div class="value red">¥2,955,934.57</div></div>
+  </div>
+
+  <div class="cards">
+        <div class="card">
+          <div class="card-head">
+            <span class="badge" style="background:#e63946">账户 A</span>
+            <span class="daily">每日 ¥350.00</span>
+          </div>
+          <div class="bar-wrap"><div class="bar" style="width:2.49%;background:#e63946"></div></div>
+          <div class="bar-note">2.49% · 目标 ¥1,000,000.00</div>
+          <table class="mini">
+            <tr><td>已投交易日</td><td class="num">102 天</td></tr>
+            <tr><td>应投本金</td><td class="num">¥35,700.00</td></tr>
+            <tr><td>实际本金</td><td class="num">¥23,992.84</td></tr>
+            <tr><td>实际比计划</td><td class="num"><span class="pos">-¥11,707.16</span></td></tr>
+            <tr><td>累计收益</td><td class="num">¥901.04</td></tr>
+            <tr><td>当前总资产</td><td class="num strong">¥24,893.88</td></tr>
+            <tr><td>距 100 万还差</td><td class="num gap">¥975,106.12</td></tr>
+            <tr><td>剩余交易日</td><td class="num">1,909 天（至 2034-02-28）</td></tr>
+            <tr><td>预计到期本金</td><td class="num">¥692,142.84</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="badge" style="background:#1d9bf0">账户 B</span>
+            <span class="daily">每日 ¥180.00</span>
+          </div>
+          <div class="bar-wrap"><div class="bar" style="width:1.23%;background:#1d9bf0"></div></div>
+          <div class="bar-note">1.23% · 目标 ¥1,000,000.00</div>
+          <table class="mini">
+            <tr><td>已投交易日</td><td class="num">102 天</td></tr>
+            <tr><td>应投本金</td><td class="num">¥18,360.00</td></tr>
+            <tr><td>实际本金</td><td class="num">¥12,638.26</td></tr>
+            <tr><td>实际比计划</td><td class="num"><span class="pos">-¥5,721.74</span></td></tr>
+            <tr><td>累计收益</td><td class="num">¥-313.69</td></tr>
+            <tr><td>当前总资产</td><td class="num strong">¥12,324.57</td></tr>
+            <tr><td>距 100 万还差</td><td class="num gap">¥987,675.43</td></tr>
+            <tr><td>剩余交易日</td><td class="num">3,161 天（至 2038-12-16）</td></tr>
+            <tr><td>预计到期本金</td><td class="num">¥581,618.26</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="badge" style="background:#2a9d8f">账户 C</span>
+            <span class="daily">每日 ¥100.00</span>
+          </div>
+          <div class="bar-wrap"><div class="bar" style="width:0.68%;background:#2a9d8f"></div></div>
+          <div class="bar-note">0.68% · 目标 ¥1,000,000.00</div>
+          <table class="mini">
+            <tr><td>已投交易日</td><td class="num">102 天</td></tr>
+            <tr><td>应投本金</td><td class="num">¥10,200.00</td></tr>
+            <tr><td>实际本金</td><td class="num">¥6,995.66</td></tr>
+            <tr><td>实际比计划</td><td class="num"><span class="pos">-¥3,204.34</span></td></tr>
+            <tr><td>累计收益</td><td class="num">¥-148.68</td></tr>
+            <tr><td>当前总资产</td><td class="num strong">¥6,846.98</td></tr>
+            <tr><td>距 100 万还差</td><td class="num gap">¥993,153.02</td></tr>
+            <tr><td>剩余交易日</td><td class="num">4,375 天（至 2043-08-12）</td></tr>
+            <tr><td>预计到期本金</td><td class="num">¥444,495.66</td></tr>
+          </table>
+        </div>
+  </div>
+
+  <section class="box">
+    <h2>节假日配置（剔除的不定投日：9 天）</h2>
+    <table class="data">
+      <tr><th>日期</th><th>星期</th><th>节假日</th><th>市场</th></tr>
+      <tbody class="holiday-page" data-page="0" style="display:table-row-group"><tr><td>2026-10-07</td><td>周三</td><td>国庆节</td><td>A股</td></tr><tr><td>2026-10-06</td><td>周二</td><td>国庆节</td><td>A股</td></tr><tr><td>2026-10-05</td><td>周一</td><td>国庆节</td><td>A股</td></tr><tr><td>2026-10-02</td><td>周五</td><td>国庆节</td><td>A股</td></tr><tr><td>2026-10-01</td><td>周四</td><td>国庆节</td><td>A股</td></tr><tr><td>2026-09-25</td><td>周五</td><td>中秋节</td><td>A股</td></tr><tr><td>2026-09-07</td><td>周一</td><td>美国劳工节</td><td>美股</td></tr><tr><td>2026-07-03</td><td>周五</td><td>美国独立日(顺延)</td><td>美股</td></tr><tr><td>2026-06-19</td><td>周五</td><td>端午节 / Juneteenth</td><td>A股、美股</td></tr></tbody>
+    </table>
+    
+    <div class="note">注：周六周日固定不定投；上表为配置文件中剔除的周一至周五节假日（A股节假日来源：沪深北交易所公告，美股来源：NYSE/Nasdaq）。
+    未来（今天之后）的节假日尚未发生、未列入配置，故「剩余交易日」为按当前配置计算的上限值，可在节假日公告后补充进 config.json。</div>
+  </section>
+
+  <section class="box">
+    <h2>使用说明</h2>
+    <div class="note">
+      1. 「已定投本金 / 累计收益」在 <b>config.json</b> 的各账户字段中维护。<br>
+      2. 修改 config.json（含未来节假日、账户截止日、每日金额等）后，重新运行 <b>python dca.py</b> 即可刷新本报表。<br>
+      3. 交易日 = 周一至周五 − 配置文件中的节假日；节假日来自「节假日」数组，可按市场（A股/美股）分别维护。<br>
+      4. 「实际比计划」= 实际金额 − 计划金额：正数（红）= 比计划多投，负数（绿）= 比计划少投，0 = 与计划一致。
+    </div>
+  </section>
+
+  <footer>生成时间：2026-11-02 18:06:18 ｜ 由 dca.py 自动生成</footer>
+</div>
+<script>
+  var hpTotal = 1, hpCur = 0;
+  function hpShow() {
+    var pages = document.querySelectorAll('.holiday-page');
+    for (var i = 0; i < pages.length; i++) {
+      pages[i].style.display = (i === hpCur) ? 'table-row-group' : 'none';
+    }
+    var info = document.getElementById('hpInfo');
+    if (info) info.textContent = '第 ' + (hpCur + 1) + ' / ' + hpTotal + ' 页';
+  }
+  function hpGo(d) {
+    hpCur = Math.min(hpTotal - 1, Math.max(0, hpCur + d));
+    hpShow();
+  }
+</script>
+</body>
+</html>
